@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fut Card Demo</title>
+    <!-- Import stylesjeet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Import font -->
+    <link rel="stylesheet" href="css/fonts.css" />
+    <!-- Flag Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css"
+      integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Fut Card -->
+      <div id="display-fut-card" class="fut-player-card">
+        <!-- Fut Card Top -->
+        <div class="player-card-top">
+          <div class="player-info">
+            <div class="player-rating">
+              <span>91</span>
+            </div>
+            <div class="player-position">
+              <span>ST</span>
+            </div>
+            <div class="player-nation">
+              <span id="display-flag" class="flag-icon"></span>
+            </div>
+            <div class="player-club">
+              <img
+                id="club-logo"
+                src="./img/logos-italie/AC-Milan.svg"
+                width="34px"
+                height="40px"
+                alt=""
+                draggable="false"
+              />
+            </div>
+            <div class="player-picture">
+              <img
+                id="img-preview"
+                src="<%= picUrl %>"
+                alt="player picture"
+                draggable="false"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Fut Card Bottom -->
+        <div class="player-card-bottom">
+          <div class="player-info">
+            <!-- Player Name -->
+            <div class="player-name">
+              <span>Neymar</span>
+            </div>
+            <!-- Player Stats -->
+            <div class="player-stats">
+              <div class="player-stats-col">
+                <span>
+                  <div class="player-stat-value player-stat-pac">91</div>
+                  <div class="player-stat-title">PAC</div>
+                </span>
+                <span>
+                  <div class="player-stat-value player-stat-sho">85</div>
+                  <div class="player-stat-title">SHO</div>
+                </span>
+                <span>
+                  <div class="player-stat-value player-stat-pas">86</div>
+                  <div class="player-stat-title">PAS</div>
+                </span>
+              </div>
+              <div class="player-stats-col">
+                <span>
+                  <div class="player-stat-value player-stat-dri">94</div>
+                  <div class="player-stat-title">DRI</div>
+                </span>
+                <span>
+                  <div class="player-stat-value player-stat-def">36</div>
+                  <div class="player-stat-title">DEF</div>
+                </span>
+                <span>
+                  <div class="player-stat-value player-stat-phy">59</div>
+                  <div class="player-stat-title">PHY</div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fut-form">
+        <form method="POST" action="/" enctype="multipart/form-data">
+          <input id="file-upload" type="file" name="file" />
+          <input type="submit" value="Upload" />
+        </form>
+        <form class="fut-form-top" action="">
+          <input
+            type="text"
+            class="fut-player-name"
+            placeholder="Player Name"
+          />
+          <input
+            type="number"
+            class="fut-player-rating"
+            placeholder="Player Rating"
+          />
+          <input
+            type="text"
+            class="fut-player-position"
+            placeholder="Player Position"
+          />
+
+          <label for="flags">Select Player Nation</label>
+          <select name="flaglist" id="flags">
+            <option value="flag-icon-br">Brazil</option>
+            <option value="flag-icon-nl">Nederland</option>
+            <option value="flag-icon-de">German</option>
+          </select>
+          <!-- <input class="show-flag" type="button" value="Update" /> -->
+
+          <label for="logos">Select Logo</label>
+          <select name="logoList" id="logos">
+            <option value="./img/logos-italie/AC-Milan.svg">AC Milan</option>
+            <option value="./img/logos-italie/AS-Roma.svg">AS Roma</option>
+            <option value="./img/logos-italie/Benevento.svg">Benevento</option>
+          </select>
+
+          <label for="fut-card">Select Fut Card</label>
+          <select name="Fut Card List" id="fut-card">
+            <option value="./img/Champions-League-RTTF-(1).png">
+              Champions League RTTF
+            </option>
+            <option value="./img/Pro Player (2).png">Pro Player</option>
+            <option value="./img/Gold Rare.png">Gold Rare</option>
+          </select>
+        </form>
+
+        <form class="fut-form-bottom" action="">
+          <div class="float-left">
+            <input type="number" class="input-pac" placeholder="PAC" />
+            <input type="number" class="input-sho" placeholder="SHO" />
+            <input type="number" class="input-pas" placeholder="PAS" />
+          </div>
+          <div class="float-right">
+            <input type="number" class="input-dri" placeholder="DRI" />
+            <input type="number" class="input-def" placeholder="DEF" />
+            <input type="number" class="input-phy" placeholder="PHY" />
+          </div>
+          <!-- <button class="submit" type="submit">Update</button> -->
+        </form>
+      </div>
+    </div>
+
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <script type="module" src="script.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
